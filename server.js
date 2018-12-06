@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
-
-require('./src/routes');
-
+require('./src/models');
 const apiRouter = require('./src/routes');
 
 
@@ -31,7 +29,6 @@ mongoose.connection.once('open', function () {
     app.use('/', apiRouter);
 
     app.use(express.static(__dirname + '/public'));
-
 
 
     app.use(function (req, res, next) {
